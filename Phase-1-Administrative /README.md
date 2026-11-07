@@ -1,111 +1,230 @@
+
 # Employee Lifecycle Management – Phase 1
 
-## Overview
+## Project Overview
 
-Phase 1 focuses on building the foundation of the Employee Lifecycle Management application in ServiceNow. This includes scoped application creation, custom table configuration, form design, data lookup rules, and dot-walking.
+Employee Lifecycle Management is a custom ServiceNow application designed to manage employee onboarding and offboarding requests.
+
+Phase 1 focuses on application creation, table configuration, form design, data lookup rules, dot-walking, and other administrative configurations.
 
 ---
 
-## 1. ServiceNow Studio – Application Creation
+## 1. ServiceNow Studio
 
-### Objective
+**Objective**
+
 To create a dedicated scoped application for managing employee lifecycle requests.
 
-### Implementation
+**Implementation**
 - Opened ServiceNow Studio.
-- Created a new scoped application named **Employee Lifecycle Management**.
-- Configured the application scope and basic application details.
+- Created a new scoped application named Employee Lifecycle Management.
+- Configured the application details and scope.
 
-### Outcome
-Successfully created a dedicated application to organize employee onboarding and offboarding functionality.
+**Outcome**
 
-### Screenshot
-![ServiceNow Studio Application](servicenow%20studio%20application.png)
+Successfully created a dedicated scoped application to manage employee onboarding and offboarding processes.
+
+**Screenshot**
+
+![ServiceNow Studio](./servicenow%20studio%20application.png)
 
 ---
 
 ## 2. Custom Table Creation
 
-### Objective
+**Objective**
+
 To create a custom table for storing employee lifecycle request information.
 
-### Implementation
-- Created a custom table named **Employee Lifecycle**.
-- Configured the required fields to capture employee-related information.
-- Enabled automatic number generation to assign unique request numbers to records.
+**Implementation**
+- Created a custom table named Employee Lifecycle.
+- Configured the required employee-related fields.
+- Enabled automatic number generation for the table.
+- Configured unique request numbers for each record.
 
-### Outcome
-Successfully created the Employee Lifecycle table to store and manage employee lifecycle records with automatically generated request numbers.
+**Outcome**
 
-### Screenshot
-![Custom Table Configuration](custom-table.png)
+Successfully created the Employee Lifecycle table to store and manage employee lifecycle records.
+
+**Screenshot**
+
+![Custom Table](./custom-table.png)
 
 ---
 
 ## 3. Custom Form Configuration
 
-### Objective
+**Objective**
+
 To design a structured form for managing employee lifecycle requests.
 
-### Implementation
-- Configured the Employee Lifecycle form.
-- Added and arranged the required fields.
-- Organized employee and request-related information.
-- Implemented the **Process Flow Formatter** to visually represent the different stages of the employee lifecycle process.
+**Implementation**
+- Created and configured the Employee Lifecycle form.
+- Added the required employee and request-related fields.
+- Arranged the fields in an organized layout.
+- Added the Process Flow Formatter to visually represent the different stages of the employee lifecycle process.
 
-### Outcome
-Created a structured form with an improved user interface and a visual representation of the request lifecycle.
+**Outcome**
 
-### Screenshot
-![Employee Lifecycle Form](employee-form.png)
+Successfully designed an organized employee lifecycle form with a visual representation of the request process.
+
+**Screenshot**
+
+![Employee Form](./employee-form.png)
 
 ---
 
-## 4. Data Lookup Rule – Automatic Assignment Group Population
+## 4. Data Lookup Rule
 
-### Objective
+**Objective**
+
 To automatically populate the Assignment Group based on the selected Department.
 
-### Implementation
-- Configured a Data Lookup Rule.
-- Defined the Department as the lookup condition.
+**Implementation**
+- Created a Data Lookup Rule.
+- Configured Department as the lookup condition.
 - Mapped the corresponding Assignment Group.
-- When a user selects a Department, the corresponding Assignment Group is automatically populated.
+- When a Department is selected, the matching Assignment Group is automatically populated.
 
-### Outcome
-Reduced manual assignment and ensured that requests are directed to the appropriate assignment group based on the selected department.
+**Outcome**
 
-### Screenshot
-![Data Lookup Rule](data-lookup-rule.png)
+Successfully automated assignment group population based on the selected department, reducing manual assignment.
+
+**Screenshot**
+
+![Data Lookup Rule](./data-lookup-rule.png)
 
 ---
 
-## 5. Dot-Walking – Automatic Email Retrieval
+## 5. Dot-Walking
 
-### Objective
+**Objective**
+
 To retrieve related email information using reference fields and dot-walking.
 
-### Implementation
+**Implementation**
 - Configured the required reference field.
-- Used dot-walking to access the related email field from the referenced record.
-- When the Department is selected, the corresponding email information is automatically retrieved and displayed.
+- Used dot-walking to access the email field from the referenced Department record.
+- When a Department is selected, the related email information is automatically retrieved.
 
-### Outcome
-Demonstrated how dot-walking can access related record information without creating unnecessary duplicate fields.
+**Outcome**
 
-### Screenshot
-Add the dot-walking configuration screenshot here.
+Successfully implemented dot-walking to access related record information without creating unnecessary duplicate fields.
+
+**Screenshot**
+
+Dot-walking screenshot will be added here.
 
 ---
 
-## Phase 1 – Learning Outcomes
+## 6. Knowledge Article Integration
 
-- Created a scoped application using ServiceNow Studio.
-- Created custom tables and configured fields.
-- Designed forms and configured Formatters.
-- Implemented automatic field population using Data Lookup Rules.
-- Understood and implemented dot-walking with reference fields.
+**Objective**
+
+To display relevant Knowledge Articles based on the Short Description.
+
+**Implementation**
+- Configured the Short Description field.
+- Set up the condition to identify the value "New Hire".
+- Configured the relevant Knowledge Article to open when the condition is met.
+
+**Outcome**
+
+Successfully integrated Knowledge Articles with the employee lifecycle request process to provide relevant information to users.
+
+**Screenshot**
+
+![Knowledge Article](./knowledge-article.png)
+
+---
+
+## 7. UI Actions – Onboarding and Offboarding
+
+**Objective**
+
+To display different options based on the selected employee request type.
+
+**Implementation**
+- Configured UI Actions for Onboarding and Offboarding.
+- Implemented the Onboarding action to display onboarding-related requirements and date information.
+- Implemented the Offboarding action to display offboarding-related options.
+
+**Outcome**
+
+Successfully implemented separate actions for handling employee onboarding and offboarding requests.
+
+**Screenshot**
+
+![UI Actions](./Ui-%20actions.png)
+
+---
+
+## 8. UI Action – Pending Approval
+
+**Objective**
+
+To display the Pending Reason field when a request enters the Pending Approval state.
+
+**Implementation**
+- Configured the UI Action for the Pending Approval state.
+- Implemented the condition to display the Pending Reason field.
+- Tested the functionality by changing the request state.
+
+**Outcome**
+
+Successfully implemented the Pending Reason functionality for requests in the Pending Approval state.
+
+**Screenshot**
+
+![Pending Approval UI Action](./Ui-%20actions.png)
+
+---
+
+## 9. Data Policy
+
+**Objective**
+
+To enforce data validation when records are updated through different interfaces, including the list view.
+
+**Implementation**
+- Identified a validation issue when updating records through the list view.
+- Converted the relevant UI Policy validation into a Data Policy.
+- Configured the required validation rules.
+- Tested the validation by attempting to update records through the list view.
+
+**Outcome**
+
+Successfully implemented Data Policy validation to prevent invalid record updates through supported interfaces.
+
+**Screenshot**
+
+![Data Policy](./data-policy.png)
+
+---
+
+## 10. ServiceNow Formatters
+
+**Objective**
+
+To improve the employee lifecycle form by displaying process information, activity history, and contextual information.
+
+**Implementation**
+- Configured the Process Flow Formatter to display the stages of the employee lifecycle process.
+- Added the Activity Formatter to display comments and field changes.
+- Configured the Contextual Formatter to display relevant contextual information within the form.
+
+**Outcome**
+
+Successfully implemented three types of formatters to improve form usability and provide better visibility into employee lifecycle records.
+
+**Screenshot**
+
+Process Flow, Activity, and Contextual Formatter screenshots will be added here.
+
+---
 
 ## Project Status
 
-**Phase 1 – Administrative Configuration: In Progress / Implementation documented**
+**Phase 1 – Administrative Configuration: Completed**
+
+**Next Phase:** Advanced Development and Automation.
