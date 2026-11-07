@@ -1,219 +1,40 @@
+# Employee Lifecycle Management (ServiceNow)
 
-# Employee Lifecycle Management – Phase 1
+A scoped ServiceNow application to manage employee onboarding and offboarding requests.
+**Phase 1: Administrative (Implementation)**
 
-## Overview
+## Demo video
+[Watch the 2-minute walkthrough](PASTE-YOUR-VIDEO-LINK-HERE)
 
-Employee Lifecycle Management is a custom ServiceNow application designed to manage employee onboarding and offboarding requests.
+The video shows: creating an onboarding request, Department filling the Assignment group, Assigned to filtered by group, switching to Offboarding, state changes on the Process Flow bar, and the Knowledge suggestions.
 
-Phase 1 focuses on application creation, table configuration, form design, data lookup rules, dot-walking, and other administrative configurations.
+## Problem
+New hire and exit tasks were scattered across emails and chats. This app keeps one request per employee with clear status, ownership and rules.
 
----
+## What I built
 
-## 1. ServiceNow Studio
+| Area | Details |
+|---|---|
+| **Application** | Scoped app with an application menu and filtered list modules |
+| **Tables** | Employee Request and Onboarding Task, linked by a Parent request reference with a related list |
+| **Form design** | Tabs (Dates, Requirements, Offboarding, Notes), choice, reference and radio button fields |
+| **Formatters** | Process Flow, Activities (filtered), Contextual Search Results |
+| **Rules** | Mandatory fields, UI policies, client scripts, data policy |
+| **Automation** | Data lookup (Department to Assignment group), dependent Assigned to, dot walking |
+| **Knowledge** | Knowledge base with categories and articles, Knowledge lookup on Short description |
 
-**Objective**
+## Challenges and fixes
+- A mandatory empty field cannot be hidden with `setDisplay`, so the script clears the mandatory flag first.
+- UI policy reversal clashed with the client script, so visibility is handled in the script and mandatory rules in the policies.
+- Short description had to be a String field for Knowledge search to work.
+- Contextual Search needed a table configuration, a search field and a context with a searcher.
 
-To create a dedicated scoped application for managing employee lifecycle requests.
+## Tech used
+ServiceNow PDI, Studio, UI policies, data policies, client scripts (JavaScript), data lookup, reference qualifiers, Knowledge Management
 
-**Implementation**
-- Opened ServiceNow Studio.
-- Created a new scoped application named Employee Lifecycle Management.
-- Configured the application details and scope.
+## Design note
+The tables are standalone, so SLA and built-in approvals are not available. A production version would extend the Task table.
 
-**Outcome**
-
-Successfully created a dedicated scoped application to manage employee onboarding and offboarding processes.
-
-<img width="1501" height="655" alt="servicenow studio application" src="https://github.com/user-attachments/assets/79f6b11f-1bf6-41cc-8b35-24b403bcb82f" />
-
-
----
-
-## 2. Custom Table Creation
-
-**Objective**
-
-To create a custom table for storing employee lifecycle request information.
-
-**Implementation**
-- Created a custom table named Employee Lifecycle.
-- Configured the required employee-related fields.
-- Enabled automatic number generation for the table.
-- Configured unique request numbers for each record.
-
-**Outcome**
-
-Successfully created the Employee Lifecycle table to store and manage employee lifecycle records.
-
-<img width="1502" height="813" alt="custom-table" src="https://github.com/user-attachments/assets/ebeecdcc-b2b6-46b8-a4b0-d77e53fe9eae" />
-
-
----
-
-## 3. Custom Form Configuration
-
-**Objective**
-
-To design a structured form for managing employee lifecycle requests.
-
-**Implementation**
-- Created and configured the Employee Lifecycle form.
-- Added the required employee and request-related fields.
-- Arranged the fields in an organized layout.
-- Added the Process Flow Formatter to visually represent the different stages of the employee lifecycle process.
-
-**Outcome**
-
-Successfully designed an organized employee lifecycle form with a visual representation of the request process.
-
-<img width="1501" height="655" alt="employee-form" src="https://github.com/user-attachments/assets/d8377ec2-c0a5-491c-8227-0f1f81834598" />
-
-
----
-
-## 4. Data Lookup Rule
-
-**Objective**
-
-To automatically populate the Assignment Group based on the selected Department.
-
-**Implementation**
-- Created a Data Lookup Rule.
-- Configured Department as the lookup condition.
-- Mapped the corresponding Assignment Group.
-- When a Department is selected, the matching Assignment Group is automatically populated.
-
-**Outcome**
-
-Successfully automated assignment group population based on the selected department, reducing manual assignment.
-
-<img width="1501" height="655" alt="data-lookup-rule" src="https://github.com/user-attachments/assets/a399e3a1-5316-4ef5-92b1-8de4893759fb" />
-
----
-
-## 5. Dot-Walking
-
-**Objective**
-
-To retrieve related email information using reference fields and dot-walking.
-
-**Implementation**
-- Configured the required reference field.
-- Used dot-walking to access the email field from the referenced Department record.
-- When a Department is selected, the related email information is automatically retrieved.
-
-**Outcome**
-
-Successfully implemented dot-walking to access related record information without creating unnecessary duplicate fields.
-
-<img width="1501" height="655" alt="data-lookup-rule" src="https://github.com/user-attachments/assets/7e8a4cde-fdae-4c78-b595-710418464318" />
-
----
-
-## 6. Knowledge Article Integration
-
-**Objective**
-
-To display relevant Knowledge Articles based on the Short Description.
-
-**Implementation**
-- Configured the Short Description field.
-- Set up the condition to identify the value "New Hire".
-- Configured the relevant Knowledge Article to open when the condition is met.
-
-**Outcome**
-
-Successfully integrated Knowledge Articles with the employee lifecycle request process to provide relevant information to users.
-
-<img width="1501" height="655" alt="knowledge-article" src="https://github.com/user-attachments/assets/4dd230e4-c33a-4da0-92b3-8776ec98ae6d" />
-
----
-
-## 7. UI Actions – Onboarding and Offboarding
-
-**Objective**
-
-To display different options based on the selected employee request type.
-
-**Implementation**
-- Configured UI Actions for Onboarding and Offboarding.
-- Implemented the Onboarding action to display onboarding-related requirements and date information.
-- Implemented the Offboarding action to display offboarding-related options.
-
-**Outcome**
-
-Successfully implemented separate actions for handling employee onboarding and offboarding requests.
-
-**Screenshot**
-
-
----
-
-## 8. UI Action – Pending Approval
-
-**Objective**
-
-To display the Pending Reason field when a request enters the Pending Approval state.
-
-**Implementation**
-- Configured the UI Action for the Pending Approval state.
-- Implemented the condition to display the Pending Reason field.
-- Tested the functionality by changing the request state.
-
-**Outcome**
-
-Successfully implemented the Pending Reason functionality for requests in the Pending Approval state.
-
-
-<img width="1501" height="655" alt="ui-policy" src="https://github.com/user-attachments/assets/d073c9e6-fcc4-440b-ab3b-301ab93dd580" />
-
----
-
-## 9. Data Policy
-
-**Objective**
-
-To enforce data validation when records are updated through different interfaces, including the list view.
-
-**Implementation**
-- Identified a validation issue when updating records through the list view.
-- Converted the relevant UI Policy validation into a Data Policy.
-- Configured the required validation rules.
-- Tested the validation by attempting to update records through the list view.
-
-**Outcome**
-
-Successfully implemented Data Policy validation to prevent invalid record updates through supported interfaces.
-
-**Screenshot**
-
-<img width="1501" height="655" alt="data-policy" src="https://github.com/user-attachments/assets/0c534ff0-de70-4830-837f-087753a3181a" />
-
----
-
-## 10. ServiceNow Formatters
-
-**Objective**
-
-To improve the employee lifecycle form by displaying process information, activity history, and contextual information.
-
-**Implementation**
-- Configured the Process Flow Formatter to display the stages of the employee lifecycle process.
-- Added the Activity Formatter to display comments and field changes.
-- Configured the Contextual Formatter to display relevant contextual information within the form.
-
-**Outcome**
-
-Successfully implemented three types of formatters to improve form usability and provide better visibility into employee lifecycle records.
-
-**Screenshot**
-
-Process Flow, Activity, and Contextual Formatter screenshots will be added here.
-
----
-
-## Project Status
-
-**Phase 1 – Administrative Configuration: Completed**
-
-**Next Phase:** Advanced Development and Automation.
+## Next phases
+- Service catalog and Flow Designer
+- Business rules, script includes and notifications
