@@ -1,7 +1,7 @@
 
 # Employee Lifecycle Management – Phase 1
 
-## Project Overview
+## Overview
 
 Employee Lifecycle Management is a custom ServiceNow application designed to manage employee onboarding and offboarding requests.
 
@@ -45,9 +45,8 @@ To create a custom table for storing employee lifecycle request information.
 
 Successfully created the Employee Lifecycle table to store and manage employee lifecycle records.
 
-**Screenshot**
+<img width="1502" height="813" alt="custom-table" src="https://github.com/user-attachments/assets/ebeecdcc-b2b6-46b8-a4b0-d77e53fe9eae" />
 
-![Custom Table](./custom-table.png)
 
 ---
 
