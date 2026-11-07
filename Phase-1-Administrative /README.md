@@ -3,8 +3,9 @@
 A scoped ServiceNow application to manage employee onboarding and offboarding requests.
 **Phase 1: Administrative (Implementation)**
 
-## Demo video
-[Watch the 2-minute walkthrough](PASTE-YOUR-VIDEO-LINK-HERE)
+## Demo Video
+
+[Watch the 2-minute Employee Lifecycle Management walkthrough](https://www.youtube.com/watch?v=_p9C5L2T0ok)
 
 The video shows: creating an onboarding request, Department filling the Assignment group, Assigned to filtered by group, switching to Offboarding, state changes on the Process Flow bar, and Knowledge suggestions.
 
