@@ -66,7 +66,7 @@ To design a structured form for managing employee lifecycle requests.
 
 Successfully designed an organized employee lifecycle form with a visual representation of the request process.
 
-<img width="1502" height="813" alt="custom-table" src="https://github.com/user-attachments/assets/1b22528e-46f1-4f30-a1ed-35e56c7340c1" />
+<img width="1501" height="655" alt="employee-form" src="https://github.com/user-attachments/assets/d8377ec2-c0a5-491c-8227-0f1f81834598" />
 
 
 ---
@@ -87,9 +87,7 @@ To automatically populate the Assignment Group based on the selected Department.
 
 Successfully automated assignment group population based on the selected department, reducing manual assignment.
 
-**Screenshot**
-
-![Data Lookup Rule](./data-lookup-rule.png)
+<img width="1501" height="655" alt="data-lookup-rule" src="https://github.com/user-attachments/assets/a399e3a1-5316-4ef5-92b1-8de4893759fb" />
 
 ---
 
@@ -108,9 +106,7 @@ To retrieve related email information using reference fields and dot-walking.
 
 Successfully implemented dot-walking to access related record information without creating unnecessary duplicate fields.
 
-**Screenshot**
-
-Dot-walking screenshot will be added here.
+<img width="1501" height="655" alt="data-lookup-rule" src="https://github.com/user-attachments/assets/7e8a4cde-fdae-4c78-b595-710418464318" />
 
 ---
 
@@ -129,9 +125,7 @@ To display relevant Knowledge Articles based on the Short Description.
 
 Successfully integrated Knowledge Articles with the employee lifecycle request process to provide relevant information to users.
 
-**Screenshot**
-
-![Knowledge Article](./knowledge-article.png)
+<img width="1501" height="655" alt="knowledge-article" src="https://github.com/user-attachments/assets/4dd230e4-c33a-4da0-92b3-8776ec98ae6d" />
 
 ---
 
@@ -152,7 +146,6 @@ Successfully implemented separate actions for handling employee onboarding and o
 
 **Screenshot**
 
-![UI Actions](./Ui-%20actions.png)
 
 ---
 
@@ -171,9 +164,8 @@ To display the Pending Reason field when a request enters the Pending Approval s
 
 Successfully implemented the Pending Reason functionality for requests in the Pending Approval state.
 
-**Screenshot**
 
-![Pending Approval UI Action](./Ui-%20actions.png)
+<img width="1501" height="655" alt="ui-policy" src="https://github.com/user-attachments/assets/d073c9e6-fcc4-440b-ab3b-301ab93dd580" />
 
 ---
 
@@ -195,7 +187,7 @@ Successfully implemented Data Policy validation to prevent invalid record update
 
 **Screenshot**
 
-![Data Policy](./data-policy.png)
+<img width="1501" height="655" alt="data-policy" src="https://github.com/user-attachments/assets/0c534ff0-de70-4830-837f-087753a3181a" />
 
 ---
 
