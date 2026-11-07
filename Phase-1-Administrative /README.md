@@ -9,7 +9,7 @@ A scoped ServiceNow application to manage employee onboarding and offboarding re
 The video shows: creating an onboarding request, Department filling the Assignment group, Assigned to filtered by group, switching to Offboarding, state changes on the Process Flow bar, and the Knowledge suggestions.
 
 ## Problem
-New hire and exit tasks were scattered across emails and chats. This app keeps one request per employee with clear status, ownership and rules.
+New hire and exit tasks were scattered across emails and chats. Managers, HR, IT and Facilities had no single place to see what was requested, who owned it, or what was still pending. This led to missed steps, such as a laptop or access card not being ready on day one, and unreturned assets after an employee left. This app keeps one request per employee with clear status, ownership and rules, so every team works from the same record.
 
 ## What I built
 
