@@ -11,6 +11,20 @@ The video shows: creating an onboarding request, Department filling the Assignme
 ## Problem
 New hire and exit tasks were scattered across emails and chats. Managers, HR, IT and Facilities had no single place to see what was requested, who owned it, or what was still pending. This led to missed steps, such as a laptop or access card not being ready on day one, and unreturned assets after an employee left. This app keeps one request per employee with clear status, ownership and rules, so every team works from the same record.
 
+## What I built
+
+| Area | Details |
+|---|---|
+| **Application** | Scoped app with an application menu and filtered list modules |
+| **Tables** | Employee Request and Onboarding Task, linked by a Parent request reference with a related list |
+| **Form design** | Tabs (Dates, Requirements, Offboarding, Notes), choice, reference and radio button fields |
+| **Formatters** | Process Flow, Activities (filtered), Contextual Search Results |
+| **Rules** | Mandatory fields, UI policies, client scripts, data policy |
+| **Automation** | Data lookup (Department to Assignment group), dependent Assigned to, dot walking |
+| **Knowledge** | Knowledge base with categories and articles, Knowledge lookup on Short description |
+
+See the screenshots below for each part.
+
 ## Screenshots
 
 ### 1. Application and table
@@ -31,23 +45,11 @@ New hire and exit tasks were scattered across emails and chats. Managers, HR, IT
 |:---:|:---:|
 | <img width="450" alt="data-lookup-rule" src="https://github.com/user-attachments/assets/0613e0f8-f694-4762-b628-65ccf77f3b29" /> | <img width="450" alt="knowledge-article" src="https://github.com/user-attachments/assets/be157974-a3fd-4d24-8ca7-6e6d38899af2" /> |
 
-## What I built
-
-| Area | Details |
-|---|---|
-| **Application** | Scoped app with an application menu and filtered list modules |
-| **Tables** | Employee Request and Onboarding Task, linked by a Parent request reference with a related list |
-| **Form design** | Tabs (Dates, Requirements, Offboarding, Notes), choice, reference and radio button fields |
-| **Formatters** | Process Flow, Activities (filtered), Contextual Search Results |
-| **Rules** | Mandatory fields, UI policies, client scripts, data policy |
-| **Automation** | Data lookup (Department to Assignment group), dependent Assigned to, dot walking |
-| **Knowledge** | Knowledge base with categories and articles, Knowledge lookup on Short description |
-
 ## Challenges and fixes
-- A mandatory empty field cannot be hidden with `setDisplay`, so the script clears the mandatory flag first.
-- UI policy reversal clashed with the client script, so visibility is handled in the script and mandatory rules in the policies.
-- Short description had to be a String field for Knowledge search to work.
-- Contextual Search needed a table configuration, a search field and a context with a searcher.
+- **Hiding a required field:** ServiceNow would not hide a field that was required and empty. I fixed it by turning off "required" first, then hiding the field.
+- **Two things controlling the same field:** The UI policy and my script were fighting over which fields to show. I gave each one a single job: the script shows and hides, and the policies handle required fields.
+- **Knowledge search not working:** The Short description field was set up as a dropdown instead of a text box. Changing it to a text field made the search work.
+- **Related articles not appearing on the form:** The search needed a few settings for my custom table: a table configuration, a field to search with, and a search source linked to Knowledge. Once these were set, articles started showing.
 
 ## Tech used
 ServiceNow PDI, Studio, UI policies, data policies, client scripts (JavaScript), data lookup, reference qualifiers, Knowledge Management
