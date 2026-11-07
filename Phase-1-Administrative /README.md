@@ -47,7 +47,6 @@ See the screenshots below for each part.
 
 ## Challenges and fixes
 - **Hiding a whole tab:** A UI policy can only hide single fields, so I used a client script with `setSectionDisplay()` to show the Offboarding and Requirements tabs based on Request type.
-- **A required field would not hide:** ServiceNow won't hide a field that is required and empty, so the script makes it not required first, then hides it.
 - **Knowledge search not working:** Short description was a dropdown instead of a text field. Changing it to a text field fixed the search.
 
 ## Tech used
