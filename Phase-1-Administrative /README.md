@@ -24,9 +24,8 @@ To create a dedicated scoped application for managing employee lifecycle request
 
 Successfully created a dedicated scoped application to manage employee onboarding and offboarding processes.
 
-**Screenshot**
+![Uploading servicenow studio application.png…]()
 
-![ServiceNow Studio](./servicenow%20studio%20application.png)
 
 ---
 
