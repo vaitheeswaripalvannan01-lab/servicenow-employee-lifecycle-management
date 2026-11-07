@@ -66,9 +66,8 @@ To design a structured form for managing employee lifecycle requests.
 
 Successfully designed an organized employee lifecycle form with a visual representation of the request process.
 
-**Screenshot**
+<img width="1502" height="813" alt="custom-table" src="https://github.com/user-attachments/assets/1b22528e-46f1-4f30-a1ed-35e56c7340c1" />
 
-![Employee Form](./employee-form.png)
 
 ---
 
