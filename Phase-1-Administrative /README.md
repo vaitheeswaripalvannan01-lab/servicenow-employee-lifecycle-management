@@ -46,10 +46,9 @@ See the screenshots below for each part.
 | <img width="450" alt="data-lookup-rule" src="https://github.com/user-attachments/assets/0613e0f8-f694-4762-b628-65ccf77f3b29" /> | <img width="450" alt="knowledge-article" src="https://github.com/user-attachments/assets/be157974-a3fd-4d24-8ca7-6e6d38899af2" /> |
 
 ## Challenges and fixes
-- **Hiding a required field:** ServiceNow would not hide a field that was required and empty. I fixed it by turning off "required" first, then hiding the field.
-- **Two things controlling the same field:** The UI policy and my script were fighting over which fields to show. I gave each one a single job: the script shows and hides, and the policies handle required fields.
-- **Knowledge search not working:** The Short description field was set up as a dropdown instead of a text box. Changing it to a text field made the search work.
-- **Related articles not appearing on the form:** The search needed a few settings for my custom table: a table configuration, a field to search with, and a search source linked to Knowledge. Once these were set, articles started showing.
+- **Hiding a whole tab:** A UI policy can only hide single fields, so I used a client script with `setSectionDisplay()` to show the Offboarding and Requirements tabs based on Request type.
+- **A required field would not hide:** ServiceNow won't hide a field that is required and empty, so the script makes it not required first, then hides it.
+- **Knowledge search not working:** Short description was a dropdown instead of a text field. Changing it to a text field fixed the search.
 
 ## Tech used
 ServiceNow PDI, Studio, UI policies, data policies, client scripts (JavaScript), data lookup, reference qualifiers, Knowledge Management
